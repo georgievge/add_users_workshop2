@@ -1,0 +1,5 @@
+---
+# defaults file for add_users_workshop2
+server_group: {}
+      
+server_users: []

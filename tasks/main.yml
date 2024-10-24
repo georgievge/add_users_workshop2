@@ -1,0 +1,13 @@
+---
+# tasks file for add_users_workshop2
+    - name: Ensure group "somegroup" exists
+      ansible.builtin.group:
+        name: "{{ server_group.name }}"
+        state: "{{ server_group.state }}"
+
+    - name: Add users
+      ansible.builtin.user:
+        name: "{{ item.name}}"
+        comment: "{{ item.comment}}"
+        group: "{{ item.group}}"
+      loop: "{{ server_users }}"
